@@ -1,31 +1,17 @@
 public class FirstClass {
     public static void main(String[] arg){
 
-        int myMarks = 40;
-        int aMark = 75;
-        int bMark = 65;
-        int cMark = 45;
-        int sMark = 35;
-        int maxMark = 100;
+        String theMonth = "APR";
 
-        if (myMarks > aMark && myMarks < maxMark) {
-            System.out.print("You got an A pass son but not the max mark.");
-        }
+        System.out.print("Your birth month owned to " + getQuart(theMonth) + " quarter");
+    }
 
-        if (myMarks > bMark && myMarks < aMark) {
-            System.out.print("You got a B pass son");
-        }
-
-        if (myMarks > cMark && myMarks < bMark) {
-            System.out.print("You got a C pass son");
-        }
-
-        if (myMarks > sMark && myMarks < cMark) {
-            System.out.print("You got a S pass son");
-        }
-
-        if (myMarks < sMark) {
-            System.out.print("You are Fail son. Try next time");
-        }
+    public static String getQuart(String month) {
+        return switch (month) {
+            case "JAN","FEB","MAR" -> "1st";
+            case "APR","MAY","JUNE" -> "2nd";
+            case "JULY","AUG","SEPT" -> "3rd";
+            default -> "bad";
+        };
     }
 }
