@@ -1,17 +1,26 @@
 public class FirstClass {
     public static void main(String[] arg){
 
-        String theMonth = "APR";
+        for ( int n = 2; n <= 20; n++) {
+            boolean isPrime = isPrimeNumber(n);
 
-        System.out.print("Your birth month owned to " + getQuart(theMonth) + " quarter");
+            if (isPrime) {
+                System.out.println(n + " is a prime number");
+            }else {
+                System.out.println(n + " is NOT a prime number");
+            }
+        }
     }
 
-    public static String getQuart(String month) {
-        return switch (month) {
-            case "JAN","FEB","MAR" -> "1st";
-            case "APR","MAY","JUNE" -> "2nd";
-            case "JULY","AUG","SEPT" -> "3rd";
-            default -> "bad";
-        };
+    public static boolean isPrimeNumber (int number) {
+
+        for (int i = 2; i < number && i < 10 ; i++ ){
+            double primCal = number % i ;
+            if(primCal == 0.00) {
+                return false;
+            }
+        }
+        return true;
     }
+
 }
