@@ -1,26 +1,24 @@
+import java.util.Scanner;
+
 public class FirstClass {
     public static void main(String[] arg){
+        String year = getInputs();
+        int intYear = Integer.parseInt(year);
+        int age = 2025 - intYear;
 
-        for ( int n = 2; n <= 20; n++) {
-            boolean isPrime = isPrimeNumber(n);
-
-            if (isPrime) {
-                System.out.println(n + " is a prime number");
-            }else {
-                System.out.println(n + " is NOT a prime number");
-            }
-        }
+        System.out.print("So you are " + age + " years old");
     }
 
-    public static boolean isPrimeNumber (int number) {
+    public static String getInputs () {
 
-        for (int i = 2; i < number && i < 10 ; i++ ){
-            double primCal = number % i ;
-            if(primCal == 0.00) {
-                return false;
-            }
-        }
-        return true;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("What is your name? ");
+        String name = scanner.nextLine();
+        System.out.println("Hello " + name);
+
+        System.out.print("What year did you born? ");
+        String bornYear = scanner.nextLine();
+        return  bornYear;
     }
-
 }
