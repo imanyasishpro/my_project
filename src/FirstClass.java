@@ -2,11 +2,13 @@ import java.util.Scanner;
 
 public class FirstClass {
     public static void main(String[] arg){
-        String year = getInputs();
-        int intYear = Integer.parseInt(year);
-        int age = 2025 - intYear;
 
-        System.out.print("So you are " + age + " years old");
+        boolean isDataValid = checkData();
+        if (isDataValid) {
+            System.out.print("So, you are " + calAge(2025) + " years old");
+        }else {
+            checkData();
+        }
     }
 
     public static String getInputs () {
@@ -20,5 +22,24 @@ public class FirstClass {
         System.out.print("What year did you born? ");
         String bornYear = scanner.nextLine();
         return  bornYear;
+    }
+
+    public static int calAge(int currentYear) {
+
+        String year = getInputs();
+        int intYear = Integer.parseInt(year);
+        int age = currentYear - intYear;
+
+        return age;
+    }
+    public static boolean checkData () {
+
+        int age = calAge(2025);
+
+        if ( 0<age && age < 125 ){
+            return true;
+        }else {
+            return false;
+        }
     }
 }
