@@ -14,6 +14,9 @@ public class Account {
         phoneNumber = number;
     }
 
+    public Account(int accNumber, double balance ) {
+        this(accNumber, balance, "Malsha", "malsha@gmail.com", "0768500837");
+    }
     public int getAccNumber(){
         return accNumber;
     }
