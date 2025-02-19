@@ -1,45 +1,21 @@
-import java.util.Scanner;
+class FirstClass {
 
-public class FirstClass {
-    public static void main(String[] arg){
+    public static void main(String[] args) {
 
-        boolean isDataValid = checkData();
-        if (isDataValid) {
-            System.out.print("So, you are " + calAge(2025) + " years old");
-        }else {
-            checkData();
-        }
-    }
+        int i = 1;
+        int count = 0;
 
-    public static String getInputs () {
+        while (i <= 20) {
+            i++;
+            if((i % 2) == 0) {
+                System.out.println("Even number " + i);
+                count++;
+            }
 
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("What is your name? ");
-        String name = scanner.nextLine();
-        System.out.println("Hello " + name);
-
-        System.out.print("What year did you born? ");
-        String bornYear = scanner.nextLine();
-        return  bornYear;
-    }
-
-    public static int calAge(int currentYear) {
-
-        String year = getInputs();
-        int intYear = Integer.parseInt(year);
-        int age = currentYear - intYear;
-
-        return age;
-    }
-    public static boolean checkData () {
-
-        int age = calAge(2025);
-
-        if ( 0<age && age < 125 ){
-            return true;
-        }else {
-            return false;
+            if (count == 5) {
+                System.out.println("5 even numbers found");
+                break;
+            }
         }
     }
 }
